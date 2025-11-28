@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Amigo Secreto Navideño</title>
+<title>Amigo Secreto La Tormenta</title>
 
 <!-- Fuentes bonitas -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -110,15 +110,13 @@ const mensajes = [
     "El wn que te tocó es adicto a la mayo casera",
     "Pinturita qlia que te tocó",
     "Te tocó el más vío",
-    "Qué le vas a regalar a este ql?",
-    "Mira la wea que te tocó"
 ];
 
 // Sugerencias de regalo por persona (puedes editar)
 const sugerencias = {
     "Felipe": "Regalale una piscola a este maricon",
     "Ignacio": "Unos meniscos nuevos estaria bueno pa este gordo",
-    "Skandar": "uas pastis y lcd y queda feliz este ql",
+    "Skandar": "unas pastis y lcd y queda feliz este ql",
     "Benjamín": "con unos 25 litros de chela lo dejai contento",
     "Diego": "una peineta de acero pa esos pelopincho",
     "Jaime": "un afilador de colmillos pa mi compare",
@@ -133,10 +131,10 @@ async function verResultado() {
         const response = await fetch(`${BACKEND_URL}?accion=sortear&nombre=${encodeURIComponent(nombre)}`);
         const data = await response.text();
 
-        if(data === "NOMBRE_NO_EXISTE") return alert("Ese nombre no está en la lista.");
+        if(data === "NOMBRE_NO_EXISTE") return alert("Ponte vio escribe bien.");
         if(data === "YA_VISTO") return alert("No podi picar tan así, acepta la wea que te tocó XD");
         if(data === "RESET_OK") return alert("🎉 Sorteo reiniciado correctamente.");
-        if(data === "NO_ASIGNADO") return alert("Ups! Algo salió mal. Contacta al organizador.");
+        if(data === "NO_ASIGNADO") return alert("Ups! Algo salió mal. avisale al cacho.");
 
         // Elegir mensaje gracioso aleatorio
         const mensaje = mensajes[Math.floor(Math.random() * mensajes.length)];
@@ -154,3 +152,4 @@ async function verResultado() {
 </script>
 </body>
 </html>
+
